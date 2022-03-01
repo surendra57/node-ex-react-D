@@ -1,1 +1,1 @@
-web: node ./server/indexx.js
+web: npm start
