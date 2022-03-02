@@ -1,22 +1,21 @@
 {
   "name": "react",
-  "version": "1.0.0", 
+  "version": "1.0.0",
   "description": "",
   "main": "./server/indexx.js",
   "engines": {
     "node": "v16.14.0"
   },
   "scripts": {
-    
     "build": "cd clients && npm run build",
     "install-client": "cd clients && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node ./server/indexx.js"
-    
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.3",
     "nodemon": "^2.0.15"
   }
 }
