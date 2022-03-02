@@ -11,9 +11,8 @@
     "build": "cd clients && npm run build",
     "install-client": "cd clients && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "server": "nodemon ./server/indexx.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix clients\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix clients\""
+    "start": "node ./server/indexx.js"
+    
   },
   "author": "",
   "license": "ISC",
