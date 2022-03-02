@@ -7,9 +7,13 @@
     "node": "v16.14.0"
   },
   "scripts": {
-    "start": "node ./server/indexx.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false --prefix clients &&  npm run build --prefix clients",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    
+    "build": "cd clients && npm run build",
+    "install-client": "cd clients && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "server": "nodemon ./server/indexx.js",
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix clients\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix clients\""
   },
   "author": "",
   "license": "ISC",
